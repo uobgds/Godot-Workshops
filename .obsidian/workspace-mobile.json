@@ -1,0 +1,186 @@
+{
+  "main": {
+    "id": "85f8dba6faef2de2",
+    "type": "split",
+    "children": [
+      {
+        "id": "6827940649835973",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be5ca00d2d7208e1",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d41441cb30ae3d7e",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "982791fcf22798fd",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Files"
+        }
+      },
+      {
+        "id": "21cb7ac15a3d5ace",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "Search"
+        }
+      },
+      {
+        "id": "b76f939182e14fa1",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "Tags"
+        }
+      },
+      {
+        "id": "fcf722bac43eaf20",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "Bookmarks"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "278d2a08c2a0e5f6",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "95b6f24c5dce122e",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Homepage/Thing's to buy.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-coming-in",
+          "title": "Backlinks"
+        }
+      },
+      {
+        "id": "1971cbc020f1497e",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "Outgoing links"
+        }
+      },
+      {
+        "id": "642a2c5a450dbcb4",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "Outline"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "system3-relay:Relay": false
+    }
+  },
+  "active": "be5ca00d2d7208e1",
+  "lastOpenFiles": [
+    "().md",
+    "Homepage/Thing's to buy.md",
+    "Pippa Wilderrun.md",
+    "Characters/Sanctuary Inhabitants/Pippa Wilderrun.md",
+    "Untitled.md",
+    "Characters/Saviour Taskforce/Tairi Kunst.md",
+    "Characters/Saviour Taskforce/Roman Marpaszek.md",
+    "Characters/Saviour Taskforce/Roman Jan Marpaszek.md",
+    "Characters/NPC/David 'Dave the Technician' Robinson.md",
+    "Characters/Sanctuary Inhabitants/Pippa Wilderrun (conflict 2025-12-10-08-27-01).md",
+    "Characters/Saviour Taskforce/René.md",
+    "Events",
+    "Structures",
+    "Characters",
+    "Story/Planning.md",
+    "Story/Characters/Illya.md",
+    "Story/Story.md",
+    "Story/Characters/Airi.md",
+    "Plot/1. The Lilac Spirit.md",
+    "Planning/Themes/Existentialism.md",
+    "Planning/Notes/Powers.md",
+    "Planning/Notes",
+    "Plot/1. The Lilac Spirit (conflict 2025-10-23-01-44-22).md",
+    "Plot/4. Origins.md",
+    "Plot/5. It's ... but void.md",
+    "Plot/4. Origins",
+    "Plot/3. The Final Convergance.md",
+    "Plot/2. Tatters of iris.md",
+    "Plot/1. The Lilac Spirit (conflict 2025-10-14-01-21-31).md",
+    "Planning/Characters/Sophie.md",
+    "Plot/4. It's... but void.md"
+  ]
+}

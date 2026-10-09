@@ -1,0 +1,14 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "Age": "number",
+    "Strengths": "multitext",
+    "Weaknesses": "multitext",
+    "Pro": "number",
+    "Price": "number",
+    "Category": "text",
+    "Purchased": "checkbox"
+  }
+}
