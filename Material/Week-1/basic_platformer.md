@@ -3,7 +3,7 @@ Let's start making our platformer, with a basic version first! I'd recommend you
 # Before you start…
 
 ## Template Project
-You can find the template project for the platformer [here](Examples/Basic-Platformer-Template/). It will have all the assets you'll need already organised, which is pretty helpful to get started with!
+You can find the template project for the platformer [here](/Examples/Basic-Platformer-Template/). It will have all the assets you'll need already organised, which is pretty helpful to get started with!
 
 ## Features
 For now, we're going to keep it simple with the following features (ordered roughly by difficulty):
@@ -22,7 +22,7 @@ For now, we're going to keep it simple with the following features (ordered roug
 	- Attack when touches player.
 - Basic level tile map (not a big focus though).
 
-We'll be using the assets within this repository, made by PixelFrog. Check the [credits and license file](Assets/CREDITS_AND_LICENSE.txt) for more information, if you want to use it in another project outside this workshop.
+We'll be using the assets within this repository, made by PixelFrog. Check the [credits and license file](/Assets/CREDITS_AND_LICENSE.txt) for more information, if you want to use it in another project outside this workshop.
 
 # Helpful Tips
 - Start with the simpler features first!

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Material/Week-1/basic_platformer.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "basic_platformer"
+              "title": "README"
             }
           }
         ]
@@ -163,14 +163,14 @@
   },
   "active": "11edae1ca1f450cd",
   "lastOpenFiles": [
-    "Examples/Basic-Platformer-Template.md",
-    "Material/Week-1/basic_platformer.md",
-    "Material/Week-1/essential_classes.md",
-    "Material/Week-1/getting_started.md",
     "Material/Week-1/good_practices.md",
+    "Material/Week-1/getting_started.md",
+    "Material/Week-1/essential_classes.md",
+    "Material/Week-1/basic_platformer.md",
     "Material/Week-1/workshop_introduction.md",
-    "().md",
     "README.md",
+    "Examples/Basic-Platformer-Template.md",
+    "().md",
     "Material/Week.md",
     "\"Material/Week.md",
     "\"Material",
