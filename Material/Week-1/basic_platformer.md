@@ -3,7 +3,7 @@ Let's start making our platformer, with a basic version first! I'd recommend you
 # Before you start…
 
 ## Template Project
-You can find the template project for the platformer [here](/Examples/Basic-Platformer-Template/). It will have all the assets you'll need already organised, which is pretty helpful to get started with!
+You can find the template project for the platformer [here](/Examples/Basic-Platformer-Template/) (and you can download it [here](https://drive.google.com/drive/folders/1hqwazt-U2FllzSpJpfQOtXqqxWQQfv73?usp=sharing)). It will have all the assets you'll need already organised, which is pretty helpful to get started with!
 
 ## Features
 For now, we're going to keep it simple with the following features (ordered roughly by difficulty):
@@ -35,5 +35,5 @@ We'll be using the assets within this repository, made by PixelFrog. Check the [
 - I'd also recommend to try separate animations from logic. For example, in `_process`, separate from the physics code, you can play the running animation whenever `not velocity.x == 0`.
 - For combat, I'd recommend using `Area2D`. You can use one for the hit boxes, i.e. for detecting attacks and taking damage from them. Then another can be used for hurt boxes which are detected by the hit boxes for determining when to take damage.
 
-# Guide
-I'm still working on this, but I should complete it soon...
+# Example
+Check out an example project (with full documented explanations) [here](https://github.com/uobgds/Godot-Workshops/tree/main/Examples/Basic-Platformer-Example)! You can download it [here](https://drive.google.com/drive/folders/1SDN3CJL8t_llsQJDt1-oy856Llr8XPuk?usp=sharing).
