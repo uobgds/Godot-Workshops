@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://bebxlstvinssx"]
+
+[ext_resource type="Script" uid="uid://c6ko4y6kywki1" path="res://systems/slime.gd" id="1_tuic5"]
+[ext_resource type="Texture2D" uid="uid://c5fquu2sergnf" path="res://assets/slime/hit.png" id="2_0pvn7"]
+[ext_resource type="Texture2D" uid="uid://dn8tqudrrwnlx" path="res://assets/slime/run.png" id="3_4q1e0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boo2g"]
+atlas = ExtResource("2_0pvn7")
+region = Rect2(0, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq38r"]
+atlas = ExtResource("2_0pvn7")
+region = Rect2(44, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io87k"]
+atlas = ExtResource("2_0pvn7")
+region = Rect2(88, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q1p6"]
+atlas = ExtResource("2_0pvn7")
+region = Rect2(132, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl2pm"]
+atlas = ExtResource("2_0pvn7")
+region = Rect2(176, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q800"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(0, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35rgu"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(44, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5vyh"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(88, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_452or"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(132, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukqwe"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(176, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xgja"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(220, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e30mu"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(264, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp6ra"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(308, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuy3i"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(352, 0, 44, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egr7h"]
+atlas = ExtResource("3_4q1e0")
+region = Rect2(396, 0, 44, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4eh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boo2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq38r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io87k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q1p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl2pm")
+}],
+"loop": 0,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q800")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35rgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5vyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_452or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukqwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xgja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e30mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp6ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuy3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egr7h")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Slime" type="CharacterBody2D" unique_id=1148839278]
+collision_layer = 0
+script = ExtResource("1_tuic5")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1369656984]
+unique_name_in_owner = true
+position = Vector2(0, -7)
+target_position = Vector2(21, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1068179155]
+unique_name_in_owner = true
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_x4eh8")
+animation = &"run"
+autoplay = "run"
+flip_h = true
+
+[node name="PhysicsCollisionPolygon" type="CollisionPolygon2D" parent="." unique_id=1753167917]
+position = Vector2(0, -25)
+polygon = PackedVector2Array(-5, -1, 5, -1, 10, 1, 14, 5, 19, 25, -19, 25, -15, 7, -12, 3, -8, 0)
+
+[node name="HitBoxArea" type="Area2D" parent="." unique_id=1087788801]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 4
+
+[node name="PhysicsCollisionPolygon" type="CollisionPolygon2D" parent="HitBoxArea" unique_id=367034499]
+position = Vector2(0, -25)
+polygon = PackedVector2Array(-5, -1, 5, -1, 10, 1, 14, 5, 15, 10, -15, 10, -15, 7, -12, 3, -8, 0)
+
+[node name="HurtBoxArea" type="Area2D" parent="." unique_id=328458910]
+unique_name_in_owner = true
+collision_layer = 16
+collision_mask = 0
+
+[node name="PhysicsCollisionPolygon" type="CollisionPolygon2D" parent="HurtBoxArea" unique_id=674511462]
+position = Vector2(0, -25)
+polygon = PackedVector2Array(-5, -1, 5, -1, 10, 1, 14, 5, 19, 25, -19, 25, -15, 7, -12, 3, -8, 0)
