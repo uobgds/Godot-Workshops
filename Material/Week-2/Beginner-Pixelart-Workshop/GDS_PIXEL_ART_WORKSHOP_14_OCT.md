@@ -11,14 +11,14 @@ Structure:
 1. [Introduction](#intro)
    1. [What is Pixel Art?](#what-is-pixel-art)
    2. [Why Learn Pixel Art?](#why-learn-pixel-art)
-   3. Getting Started with Pixel Art
-3. Learning about the tool (Piskel)  
-   1. Making basic shapes and colouring  
-   2. Making a simple animation  
-   3. Exporting sprite  
-4. Making a platforming character (using a base)  
-   1. Importing a base spritesheet  
-   2. Creating a custom character from a base
+   3. [Getting Started with Pixel Art](#getting-started-with-pixel-art)
+3. [Learning about the tool (Piskel)](#learning-about-the-tool)
+   1. [Making basic shapes and colouring](#creating-and-colouring-a-basic-shape-simple-ball)
+   2. [Making a simple animation](#simple-bounce-animations)
+   3. [Exporting sprite](#exporting)
+4. [Making a platforming character (using a base)](#creating-a-platformer-character)
+   1. [Importing a base spritesheet](#importing-a-sprite-sheet)
+   2. [Creating a custom character from a base](#modifying-the-sprite)
 
 ## INTRO
 
@@ -266,6 +266,8 @@ We now have a complete sprite animation! Take a second to admire your work and d
 
 <img src="images/BOUNCYBALL.gif" alt="gnome run animation" width="100">
 
+## Exporting
+
 Next, you can export this animation as a GIF Animation, or as a spritesheet to be used in Godot.
 
 <img src="images/image31.png" alt="Image 37" width="300">
@@ -336,7 +338,7 @@ It’s not gonna be the smoothest walk cycle, but for the sake of simplicity of 
 
 ---
 
-### Modifying the sprite to animate your own character’s walk cycle
+### Modifying the sprite
 
 It really depends on what your character will be and the design of the character, but let’s say I want to make a woodland creature inspired by the Minish race from the Legend of Zelda.
 
