@@ -17,7 +17,7 @@ Structure:
    2. [Making a simple animation](#simple-bounce-animations)
    3. [Exporting sprite](#exporting)
 4. [Making a platforming character (using a base)](#creating-a-platformer-character)
-   1. [Importing a base spritesheet](#importing-a-spritesheet)
+   1. [Importing a base spritesheet](#importing-a-sprite-sheet)
    2. [Creating a custom character from a base](#modifying-the-sprite)
 
 ## INTRO
