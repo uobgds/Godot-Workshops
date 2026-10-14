@@ -11,10 +11,10 @@ Structure:
 1. [Introduction](#intro)
    1. [What is Pixel Art?](#what-is-pixel-art)
    2. [Why Learn Pixel Art?](#why-learn-pixel-art)
-   3. Getting Started with Pixel Art
-3. Learning about the tool (Piskel)  
-   1. Making basic shapes and colouring  
-   2. Making a simple animation  
+   3. [Getting Started with Pixel Art](#getting-started-with-pixel-art)
+3. [Learning about the tool (Piskel)](#learning=about-the-tool)
+   1. [Making basic shapes and colouring](#creating-and-colouring-a-basic-shape-simple-ball)
+   2. [Making a simple animation](#simple-bounce-animations)
    3. Exporting sprite  
 4. Making a platforming character (using a base)  
    1. Importing a base spritesheet  
