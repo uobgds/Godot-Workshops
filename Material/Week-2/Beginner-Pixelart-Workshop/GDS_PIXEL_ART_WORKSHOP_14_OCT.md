@@ -9,8 +9,8 @@ Written by Irfan Satria (UoB Game Development Society)
 Structure:
 
 1. [Introduction](#intro)
-   1. What is Pixel Art?
-   2. Why Learn Pixel Art?
+   1. [What is Pixel Art?](#what-is-pixel-art)
+   2. [Why Learn Pixel Art?](#why-learn-pixel-art)
    3. Getting Started with Pixel Art
 3. Learning about the tool (Piskel)  
    1. Making basic shapes and colouring  
@@ -27,6 +27,8 @@ Pixel art is a style of art born in the early days of computer graphics.
 Since computers back then can only render out a limited number of pixels at a time, every single pixel matters in creating the desired image!
 It’s called pixel art because every placed pixel is a deliberate choice from you, the artist!
 
+---
+
 ### Why Learn pixel Art?
 Pixel art is a very popular medium for game art because it has several big advantages:
 
@@ -36,13 +38,15 @@ First, It is very accessible and does not require advanced tools. Born from tech
 
 Second, It is simple and easy to learn, and scales well with your skill. a coherent image can be made using a minimal amount of pixels and colours, which is pretty easy to do. For example, the original MegaMan sprite is only 16 pixels tall with 5 colours and can be easily replicated with minimal skill..
 
-<img src="images/image16.png" alt="Image 2" width="300">
+<img src="images/image16.png" alt="Image 2" width="400">
 
 But with more advanced techniques, shading, etc.. and bigger canvas, you can make more detailed sprites.
 
 Lastly, It is easy to integrate into games. Pixel art file size is very SMALL. It’s perfect for small games that will run on any hardware using any game engine.
 
 <img src="images/image35.png" alt="Image 6" width="100">
+
+---
 
 ### Getting Started with Pixel Art
 
@@ -52,11 +56,14 @@ There are probably only two things in mind if you’re going to start a project,
 
 In retro games/ pixel art games, dimension plays a very big role because it is based on how many pixels the hardware can render every frame. This is called a “native” resolution. The more pixels there are, the more detailed your piece will be.
 
-<figure>
-<img src="images/image27.png" alt="Image 3" width="300">  
-<figcaption>Different hardware rendering resolutions. From PIXEL LOGIC by Michael Azzi.</figcaption>
-</figure>
 
+<div align="left">
+  <img src="images/image27.png" alt="Image 3" width="500">
+  <br>
+  <sub>Different hardware rendering resolutions. From <i>Pixel Logic</i> by Michael Azzi.</sub>
+</div>
+
+<br>
 
 Obviously nowadays we are not constrained by small resolutions as HD has become the standard, and with game engines like Godot you are able to set the resolution of the game yourself. Pixel art has become more of a stylistic choice nowadays rather than necessity, unless you are using something like Pico-8 or developing for an old console.
 
@@ -78,7 +85,11 @@ Another example is “Goodboy Galaxy”, a modern game from 2023 designed for th
 
 <img src="images/image7.png" alt="Image 9" width="300">
 
-For beginners you don’t really have to agonise over this, but if you’re going for a style in mind, determining the resolution your game will be in and the sprite sizes ***is very*** **important** to have a consistent art style. 
+For games built for PC and modern consoles (Which is likely what you'll be doing), most Godot guides and tutorials will recommend you to go with 480x270. 
+It is a very popular 16:9 resolution that scales nicely to 1080p and grants you a sufficiently big workspace to add a lot of elements to your game.
+TMNT: Shredder's Revenge and many other modern pixel games use this resolution.
+
+<img src="images/tmnt.jpg" alt="tmnt" width="300">
 
 ***And then the second one is the tool.***
 
@@ -100,9 +111,11 @@ Etc.
 A huge advantage of dedicated pixel art editors that saves you the time and headache is exporting game-ready assets.
 
 For today’s example we’ll be using the simplest one which is Piskel, you can use the online version here:  
-[https\://www\.piskelapp.com/kids/](https://www.piskelapp.com/kids/)
+[PISKEL KIDS](https://www.piskelapp.com/kids/)
 
 Note that we use the “kids” version as it has all the features as the normal version but with no ads\!
+
+---
 
 ## LEARNING ABOUT THE TOOL
 
@@ -249,7 +262,9 @@ Frame 5 should be our original unmodified ball.
 
 <img src="images/image25.png" alt="Image 36" width="300">
 
-We now have a complete sprite animation\! Take a second to admire your work and don’t forget to save it.
+We now have a complete sprite animation! Take a second to admire your work and don’t forget to save it.
+
+<img src="images/BOUNCYBALL.gif" alt="gnome run animation" width="100">
 
 Next, you can export this animation as a GIF Animation, or as a spritesheet to be used in Godot.
 
@@ -277,12 +292,15 @@ It is important to check with the author for their attribution and credit system
 
 One such asset pack we can modify is this one:
 
-[https\://pixelfrog-assets.itch.io/pixel-adventure-1](https://pixelfrog-assets.itch.io/pixel-adventure-1)
+[PIXEL ADVENTURE 1 (By Pixel Frog)](https://pixelfrog-assets.itch.io/pixel-adventure-1)
 
-Which is perfect because the characters are 32x32, the same as our previous example\!  
-Download it and extract.
+Which is perfect because the characters are 32x32, the same as our previous example!
 
-1. Importing a sprite sheet
+You don't have to download it for this workshop but you can freely explore it for yourself. This workshop uses a modified file of one of the characters that can be found in the next section.
+
+---
+
+### Importing a sprite sheet
 
 In an empty Piskel workspace, select import, and import from picture
 
@@ -314,13 +332,15 @@ We can leave the following frames to make a sufficient walk cycle:
 
 [DOWNLOAD THE MODIFIED FILE HERE (RUN_5frames)](https://drive.google.com/drive/folders/17X89752JHAf_5Bcymg-6F6UZinc3xXyq?usp=sharing)
 
-It’s not gonna be the smoothest walk cycle, but for the sake of simplicity of this workshop and your upcoming game jam, we can use it. Feel free to modify the original 12 frame animation if you want your stuff to look smooth\!
+It’s not gonna be the smoothest walk cycle, but for the sake of simplicity of this workshop and your upcoming game jam, we can use it. Feel free to modify the original 12 frame animation if you want your stuff to look smooth!
 
-2. Modifying the sprite to animate your own character’s walk cycle
+---
+
+### Modifying the sprite to animate your own character’s walk cycle
 
 It really depends on what your character will be and the design of the character, but let’s say I want to make a woodland creature inspired by the Minish race from the Legend of Zelda.
 
-<img src="images/image15.png" alt="Image 47" width="300"> 
+<img src="images/image15.png" alt="Image 47" width="100"> 
 
 I painted on top of the first frame first, preserving the original lineart and shape while adding my own elements.
 
@@ -342,20 +362,24 @@ We will paint new arms and legs to match up with the reference.
 
 <img src="images/image36.png" alt="Image 52" width="300">
 
-Do the same with frame 3, 4, and 5\!   
+Do the same with frame 3, 4, and 5!   
 Take your time in figuring out things, as this is where the real creative process happens. 🙂
 
 <img src="images/image23.png" alt="Image 53" width="300">
 
-<img src="images/image32.png" alt="Image 54" width="300">
+We'll end up with a custom pixel art with animations ready to put in our game.
 
-Now export your newly crafted spritesheet and admire your work\!
+<img src="images/GnomeRun.gif" alt="gnome run animation" width="100">
+
+Now export your newly crafted spritesheet and admire your work!
+
+<img src="images/image32.png" alt="Image 54" width="300">
 
 That wraps up this tutorial session, every .piskel and spritesheet file made is on this drive link:
 
-[https\://drive.google.com/drive/folders/18ah28-4qH4YFG\_7IX9\_ESEGxnZ8zxrAC?usp=drive\_link](https://drive.google.com/drive/folders/18ah28-4qH4YFG_7IX9_ESEGxnZ8zxrAC?usp=drive_link)
+[FINISHED PROJECT FILES](https://drive.google.com/drive/folders/17X89752JHAf_5Bcymg-6F6UZinc3xXyq)
 
-\---
+---
 
 Some cool resources if you want to get serious about pixel art:
 
@@ -365,6 +389,6 @@ What Size To Make Pixel Art: [https\://youtu.be/AXb-VBZTKDA?si=b4ybXTUWRriRHQt6]
 
 Basic Anti-Aliasing for Beginner: [https\://youtu.be/UN-m3o9V7kk?si=Uxf84XxhoxBSwUSJ](https://youtu.be/UN-m3o9V7kk?si=Uxf84XxhoxBSwUSJ)
 
-Study various games’ pixel art:  
+Get and study various games’ pixel art assets: 
 [https\://www\.spriters-resource.com/](https://www.spriters-resource.com/)
 
