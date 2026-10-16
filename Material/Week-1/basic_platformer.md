@@ -1,4 +1,4 @@
-Let's start making our platformer, with a basic version first! I'd recommend you experiment to try figure things out. If you're unsure on where to start, check out the [essential classes guide](essential_classes.md) for some very useful nodes you'll likely be needing. If you're struggling, you might find it useful to check out this [guide](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html). I'm currently working on a guide for implementing the basic version of the platformer, so in the next few days this file should be updated with it.
+Let's start making our platformer, with a basic version first! I'd recommend you experiment to try figure things out. If you're unsure on where to start, check out the [essential classes guide](essential_classes.md) for some very useful nodes you'll likely be needing. If you're struggling, you might find it useful to check out this [guide](https://docs.godotengine.org/en/stable/getting_started/first_2d_game/index.html).
 
 # Before you start…
 
