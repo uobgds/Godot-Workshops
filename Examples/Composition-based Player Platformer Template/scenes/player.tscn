@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ddl0olomw7dcf"]
+
+[ext_resource type="Script" uid="uid://crsiwvrvg28bt" path="res://systems/game_character/game_character.gd" id="1_ur7pv"]
+[ext_resource type="SpriteFrames" uid="uid://c11mkqrgg0gqq" path="res://data/player/sprite_frames/ninja_frog.tres" id="2_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
+size = Vector2(23, 24)
+
+[node name="Player" type="CharacterBody2D" unique_id=594763506]
+script = ExtResource("1_ur7pv")
+
+[node name="PhysicsCollisionShape" type="CollisionShape2D" parent="." unique_id=287442460]
+position = Vector2(-0.5, -12)
+shape = SubResource("RectangleShape2D_qlg0r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=787747257]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2_g2els")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.064287245
