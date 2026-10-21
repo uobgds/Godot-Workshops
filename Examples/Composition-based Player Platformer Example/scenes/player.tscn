@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://ddl0olomw7dcf"]
 
-[ext_resource type="Script" uid="uid://b3qjd7ylxicj8" path="res://systems/entities/stateful_character.gd" id="1_jej6c"]
+[ext_resource type="Script" uid="uid://crsiwvrvg28bt" path="res://systems/game_character/game_character.gd" id="1_ur7pv"]
 [ext_resource type="SpriteFrames" uid="uid://c11mkqrgg0gqq" path="res://data/player/sprite_frames/ninja_frog.tres" id="2_g2els"]
 [ext_resource type="Script" uid="uid://b1ojcelk7522r" path="res://systems/components/hit_box.gd" id="3_3v2ag"]
 [ext_resource type="Script" uid="uid://25fa5ntw6u6p" path="res://systems/components/gravity_component.gd" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://r7ylcg38ptoe" path="res://systems/components/health_component.gd" id="3_ur7pv"]
 [ext_resource type="Script" uid="uid://cgc1v6f7102du" path="res://systems/components/hurt_box.gd" id="4_jej6c"]
-[ext_resource type="Script" uid="uid://6brixc27xnwl" path="res://systems/states/player/player_idle_state.gd" id="4_qlg0r"]
-[ext_resource type="Script" uid="uid://bf0xid8q0vx5y" path="res://systems/states/player/player_run_state.gd" id="5_qlg0r"]
-[ext_resource type="Script" uid="uid://clwet76og1atr" path="res://systems/states/player/player_jump_state.gd" id="6_tuyoq"]
-[ext_resource type="Script" uid="uid://c0q3345n4hqof" path="res://systems/state_machine/character_state_machine.gd" id="7_jej6c"]
-[ext_resource type="Script" uid="uid://b8jg5h8c667o0" path="res://systems/states/player/player_fall_state.gd" id="8_smehm"]
-[ext_resource type="Script" uid="uid://d3hbsdmyxlk6o" path="res://systems/states/player/player_death_state.gd" id="13_f1ej7"]
-[ext_resource type="Script" uid="uid://diy6130devvg" path="res://systems/states/player/player_double_jump.gd" id="13_jej6c"]
-[ext_resource type="Script" uid="uid://0offoktpxkw6" path="res://systems/states/player/player_hurt_state.gd" id="14_f1ej7"]
+[ext_resource type="Script" uid="uid://6mkkyps6855j" path="res://systems/game_character/character_state_machine.gd" id="6_tuyoq"]
+[ext_resource type="Script" uid="uid://brxv7qrxnasds" path="res://systems/states/player_idle_state.gd" id="7_fjrip"]
+[ext_resource type="Script" uid="uid://dvmg84ccpj38x" path="res://systems/states/player_run_state.gd" id="8_smehm"]
+[ext_resource type="Script" uid="uid://biex0dghhiulp" path="res://systems/states/player_death_state.gd" id="8_y4r1p"]
+[ext_resource type="Script" uid="uid://cq2iiap5645wi" path="res://systems/states/player_hurt_state.gd" id="9_f1ej7"]
+[ext_resource type="Script" uid="uid://ukbn31yrck3x" path="res://systems/states/player_squash_state.gd" id="9_oprun"]
+[ext_resource type="Script" uid="uid://b5q2q7plmnst7" path="res://systems/states/player_fall_state.gd" id="10_3v2ag"]
+[ext_resource type="Script" uid="uid://bkqfac8sqcue3" path="res://systems/states/player_jump_state.gd" id="11_d2wvv"]
+[ext_resource type="Script" uid="uid://cijsx071kbp1v" path="res://systems/states/player_double_jump_state.gd" id="13_jej6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
 size = Vector2(23, 24)
@@ -22,11 +23,10 @@ size = Vector2(23, 24)
 size = Vector2(23, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v2ag"]
-size = Vector2(23, 3)
+size = Vector2(9, 2)
 
-[node name="Player" type="CharacterBody2D" unique_id=594763506 node_paths=PackedStringArray("_state_machine")]
-script = ExtResource("1_jej6c")
-_state_machine = NodePath("CharacterStateMachine")
+[node name="Player" type="CharacterBody2D" unique_id=594763506]
+script = ExtResource("1_ur7pv")
 
 [node name="PhysicsCollisionShape" type="CollisionShape2D" parent="." unique_id=287442460]
 position = Vector2(-0.5, -12)
@@ -35,9 +35,9 @@ shape = SubResource("RectangleShape2D_qlg0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=787747257]
 position = Vector2(0, -16)
 sprite_frames = ExtResource("2_g2els")
-animation = &"idle"
+animation = &"jumping"
 autoplay = "idle"
-frame_progress = 0.6341118
+frame_progress = 1.0
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1483015195]
 collision_layer = 2
@@ -57,12 +57,13 @@ script = ExtResource("4_jej6c")
 metadata/_custom_type_script = "uid://cgc1v6f7102du"
 
 [node name="HurtBoxCollisionShape" type="CollisionShape2D" parent="HurtBox" unique_id=2099816276]
-position = Vector2(-0.5, 1.5)
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_3v2ag")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=414186476 node_paths=PackedStringArray("_hit_box")]
 script = ExtResource("3_ur7pv")
 _hit_box = NodePath("../HitBox")
+_health = 5
 metadata/_custom_type_script = "uid://r7ylcg38ptoe"
 
 [node name="GravityComponent" type="Node" parent="." unique_id=1586170209 node_paths=PackedStringArray("_character_body")]
@@ -72,41 +73,62 @@ _gravity_acceleration = 1000.0
 _terminal_speed = 2000.0
 metadata/_custom_type_script = "uid://25fa5ntw6u6p"
 
-[node name="CharacterStateMachine" type="Node" parent="." unique_id=1454585263 node_paths=PackedStringArray("_character_body", "_sprite")]
-script = ExtResource("7_jej6c")
-_character_body = NodePath("..")
-_sprite = NodePath("../AnimatedSprite2D")
-
-[node name="PlayerRunState" type="Node" parent="CharacterStateMachine" unique_id=1348994582]
-script = ExtResource("5_qlg0r")
-metadata/_custom_type_script = "uid://bf0xid8q0vx5y"
-
-[node name="PlayerJumpState" type="Node" parent="CharacterStateMachine" unique_id=639012732]
+[node name="CharacterStateMachine" type="Node" parent="." unique_id=684601184 node_paths=PackedStringArray("_character_body", "_animated_sprite")]
 script = ExtResource("6_tuyoq")
-metadata/_custom_type_script = "uid://clwet76og1atr"
+_character_body = NodePath("..")
+_animated_sprite = NodePath("../AnimatedSprite2D")
+_state_started_running_debug_messages = true
+metadata/_custom_type_script = "uid://6mkkyps6855j"
 
-[node name="PlayerFallState" type="Node" parent="CharacterStateMachine" unique_id=1948169139 node_paths=PackedStringArray("_hurt_box", "_hit_box", "_double_jump_state")]
-script = ExtResource("8_smehm")
+[node name="PlayerDeathState" type="Node" parent="CharacterStateMachine" unique_id=165513107 node_paths=PackedStringArray("_health_component", "character_body", "animated_sprite")]
+script = ExtResource("8_y4r1p")
+_health_component = NodePath("../../HealthComponent")
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://biex0dghhiulp"
+
+[node name="PlayerHurtState" type="Node" parent="CharacterStateMachine" unique_id=407827686 node_paths=PackedStringArray("_health_component", "character_body", "animated_sprite")]
+script = ExtResource("9_f1ej7")
+_health_component = NodePath("../../HealthComponent")
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://cq2iiap5645wi"
+
+[node name="PlayerSquashState" type="Node" parent="CharacterStateMachine" unique_id=586164552 node_paths=PackedStringArray("_hurt_box", "character_body", "animated_sprite")]
+script = ExtResource("9_oprun")
 _hurt_box = NodePath("../../HurtBox")
-_hit_box = NodePath("../../HitBox")
-_double_jump_state = NodePath("../PlayerDoubleJump")
-metadata/_custom_type_script = "uid://b8jg5h8c667o0"
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://ukbn31yrck3x"
 
-[node name="PlayerIdleState" type="Node" parent="CharacterStateMachine" unique_id=1583343002]
-script = ExtResource("4_qlg0r")
-metadata/_custom_type_script = "uid://6brixc27xnwl"
-
-[node name="PlayerDoubleJump" type="Node" parent="CharacterStateMachine" unique_id=566840542 node_paths=PackedStringArray("_jump_state")]
+[node name="PlayerDoubleJump" type="Node" parent="CharacterStateMachine" unique_id=2094012686 node_paths=PackedStringArray("_jump_state", "character_body", "animated_sprite")]
 script = ExtResource("13_jej6c")
-_jump_state = NodePath("../PlayerJumpState")
-metadata/_custom_type_script = "uid://diy6130devvg"
+_jump_state = NodePath("../PlayerJumpingState")
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://cijsx071kbp1v"
 
-[node name="PlayerDeathState" type="Node" parent="CharacterStateMachine" unique_id=698194398 node_paths=PackedStringArray("_health_component")]
-script = ExtResource("13_f1ej7")
-_health_component = NodePath("../../HealthComponent")
-metadata/_custom_type_script = "uid://d3hbsdmyxlk6o"
+[node name="PlayerJumpingState" type="Node" parent="CharacterStateMachine" unique_id=2095009350 node_paths=PackedStringArray("character_body", "animated_sprite")]
+script = ExtResource("11_d2wvv")
+_jump_speed = 300.0
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://bkqfac8sqcue3"
 
-[node name="PlayerHurtState" type="Node" parent="CharacterStateMachine" unique_id=1810845520 node_paths=PackedStringArray("_health_component")]
-script = ExtResource("14_f1ej7")
-_health_component = NodePath("../../HealthComponent")
-metadata/_custom_type_script = "uid://0offoktpxkw6"
+[node name="PlayerFallState" type="Node" parent="CharacterStateMachine" unique_id=655985383 node_paths=PackedStringArray("character_body", "animated_sprite")]
+script = ExtResource("10_3v2ag")
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://b5q2q7plmnst7"
+
+[node name="PlayerRunState" type="Node" parent="CharacterStateMachine" unique_id=80627489 node_paths=PackedStringArray("character_body", "animated_sprite")]
+script = ExtResource("8_smehm")
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://dvmg84ccpj38x"
+
+[node name="PlayerIdleState" type="Node" parent="CharacterStateMachine" unique_id=1645035394 node_paths=PackedStringArray("character_body", "animated_sprite")]
+script = ExtResource("7_fjrip")
+character_body = NodePath("../..")
+animated_sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://brxv7qrxnasds"

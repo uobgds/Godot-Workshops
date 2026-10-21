@@ -61,7 +61,8 @@ func _ready() -> void:
 ## Called on [signal Area2D.area_entered].
 func _on_area_entered(area:Area2D) -> void:
 	if area is HitBox:
-		hit.emit(area)
+		var hit_box:HitBox = area
+		hit.emit(hit_box)
 
 
 ## Should be called whenever this [HurtBox] has killed something.

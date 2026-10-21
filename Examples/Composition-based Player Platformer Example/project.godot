@@ -10,13 +10,16 @@ config_version=5
 
 [application]
 
-config/name="GDS Workshop Example (Balanced)"
+config/name="GDS Composition-Based Player Workshop Example"
 run/main_scene="uid://b376gkh84ki7b"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [debug]
 
+gdscript/warnings/directory_rules={
+"res://addons": 1
+}
 gdscript/warnings/untyped_declaration=2
 gdscript/warnings/unsafe_property_access=2
 gdscript/warnings/unsafe_method_access=2

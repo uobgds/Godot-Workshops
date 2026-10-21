@@ -83,4 +83,4 @@ func _apply_gravity(delta:float) -> void:
 
 # Warning if [member _character_body] isn't set.
 func _get_configuration_warnings() -> PackedStringArray:
-	return Utils.append_dependency_configuration_warning(self, "_character_body")
+	return DSM.append_dependency_configuration_warning(self, "_character_body")

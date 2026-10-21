@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://css1yptglt2jw" path="res://assets/textures/tile_sets/all_levels.png" id="1_2venv"]
 [ext_resource type="PackedScene" uid="uid://ddl0olomw7dcf" path="res://scenes/player.tscn" id="2_paw1w"]
+[ext_resource type="Script" uid="uid://b1ojcelk7522r" path="res://systems/components/hit_box.gd" id="3_j6w7d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paw1w"]
 texture = ExtResource("1_2venv")
@@ -160,13 +161,27 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_paw1w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hyts"]
+
 [node name="TestLevel" type="Node2D" unique_id=530780445]
 
 [node name="Player" parent="." unique_id=2024480014 instance=ExtResource("2_paw1w")]
+position = Vector2(1, 61)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1192533576]
+position = Vector2(9, 65)
 tile_map_data = PackedByteArray("AAAEAAAAAAAHAAAAAAADAAAAAAAHAAAAAAACAAAAAAAHAAAAAAABAAAAAAAHAAAAAAAAAAAAAAAHAAAAAAD//wAAAAAHAAAAAAD+/wAAAAAHAAAAAAD9/wAAAAAHAAAAAAD8/wAAAAAHAAAAAAD7/wAAAAAHAAAAAAD6/wAAAAAHAAAAAAD5/wAAAAAHAAAAAAD4/wAAAAAHAAAAAAD3/wAAAAAHAAAAAAAFAAAAAAAHAAAAAAAGAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAA=")
 tile_set = SubResource("TileSet_3p835")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=607655654]
 zoom = Vector2(4, 4)
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=382103719]
+position = Vector2(84, 48)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("3_j6w7d")
+metadata/_custom_type_script = "uid://b1ojcelk7522r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1709410013]
+shape = SubResource("RectangleShape2D_8hyts")
